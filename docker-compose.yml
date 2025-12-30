@@ -1,0 +1,10 @@
+services:
+  pytorch-dev:
+    build: .
+    volumes:
+      - /Users/jozefzivcic/dev/git:/workspace
+      - /Users/jozefzivcic/dev/container:/home
+    working_dir: /workspace
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all # Kept for compatibility, though ignored by Mac
+    command: tail -f /dev/null # Keeps the container running indefinitely for development
